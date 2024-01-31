@@ -14,6 +14,7 @@ User Registration and Authentication
 
 *As a new user, I want to register for an account using my email and password.
 Estimated Completion Time: 2 days
+
 *As a registered user, I want to log in securely using my credentials.
 Estimated Completion Time: 2 days
 
