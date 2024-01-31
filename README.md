@@ -10,6 +10,7 @@ Project stakeholders: Students and Faculty of the Claremont Colleges
 Project requirements: User-friendly and clean interface, account registration, login interface and authentication, word puzzle or letters rearranging gameplay mechanics, score leaderboard.
 
 **Users stories:**
+
 User Registration and Authentication
 
 *As a new user, I want to register for an account using my email and password.
