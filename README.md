@@ -27,6 +27,7 @@ As a user, I want to see my current ranking on the leaderboard.
 Estimated Completion Time: 3 days
 
 **Gameplay Features**
+
 *As a user, I want to play the interactive game where I guess words based on clues.
 Estimated Completion Time: 1 week
 *As a user, I want to earn points for correct guesses and progress through levels.
