@@ -1,5 +1,4 @@
 # ist-303-team-2
-with relevant documentation i.e. team members, stakeholders, requirements etc.
 
 Team members: Roberta Vitale, Anjan Rana Magar, Chun Chen Lai
 
