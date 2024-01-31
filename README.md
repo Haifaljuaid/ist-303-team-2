@@ -1,7 +1,7 @@
 # ist-303-team-2
 with relevant documentation i.e. team members, stakeholders, requirements etc.
 
-Team members: Roberta Vitale, Anjan x, Chun Chen Lai
+Team members: Roberta Vitale, Anjan Rana Magar, Chun Chen Lai
 
 Concept for your application: Interactive Word Puzzle Challenge Application that promotes mental stimulations and interactive community among the players
 
