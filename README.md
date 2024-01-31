@@ -13,6 +13,7 @@ Project requirements: User-friendly and clean interface, account registration, l
 User Registration and Authentication
 *As a new user, I want to register for an account using my email and password.
 Estimated Completion Time: 2 days
+
 *As a registered user, I want to log in securely using my credentials.
 Estimated Completion Time: 2 days
 
@@ -23,13 +24,14 @@ Estimated Completion Time: 3 days
 **Daily Puzzles and Leaderboard**
 *As a user, I want to view the daily puzzle challenge to participate in.
 Estimated Completion Time: 3 days
-As a user, I want to see my current ranking on the leaderboard.
+
+*As a user, I want to see my current ranking on the leaderboard.
 Estimated Completion Time: 3 days
 
 **Gameplay Features**
-
 *As a user, I want to play the interactive game where I guess words based on clues.
 Estimated Completion Time: 1 week
+
 *As a user, I want to earn points for correct guesses and progress through levels.
 Estimated Completion Time: 4 days
 
