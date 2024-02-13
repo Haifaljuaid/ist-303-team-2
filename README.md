@@ -8,6 +8,9 @@ Project stakeholders: Students and Faculty of the Claremont Colleges
 
 Project requirements: User-friendly and clean interface, account registration, login interface and authentication, word puzzle or letters rearranging gameplay mechanics, score leaderboard.
 
+Weekly meeting time: Every Tuesday.
+
+**Part A** **(Meeting on 1/27)**
 **Users stories:**
 
 **User Registration and Authentication**
@@ -46,7 +49,7 @@ Estimated Completion Time: 3 days
 *I want a user-friendly interface that allows me to access the game seamlessly from my smartphone.
 Estimated Completion Time: 5 days
 
-**PART B**
+**PART B** **(Meeting on 2/6, 2/13)**
 
 **Tasks:**
 **User Registration and Authentication**
@@ -90,8 +93,10 @@ Estimated Completion Time: 5 days
 **Burndown Chart**
 ![Team Project Burndown](https://github.com/MikeLaiGitHub/ist-303-team-2/assets/123436580/64be8eab-d054-4155-84a3-a186971d9fe8)
 
+**Evidence of periodic meetings**
+Meeting on February 6th: we decomposed the user stories shown in Part A into tasks, discussed the features of the application, and built the iterations for Milestone 1.0. We also assigned tasks to each group member.
 
-
+Meeting on February 13th: we created a burn down chart that will allow us to track our work until completion of Milestone 1.0. We started to develop the application's code based on the chosen iterations.
 
 Provide evidence in your github repository that you are meeting for periodic stand up meetings - your team should ideally meet at least twice a week.
 Ensure that your development and testing environment is set up. Be sure to have some working functional (however rudimentary) and test code in your repository.
