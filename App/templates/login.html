@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>Flask Intro - login page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css')}}">
+  </head>
+  <body>
+    <div class="container">
+      <h1>WordleForAll</h1>
+      
+      <div class="intro">
+        <p>
+          Welcome to the enchanting world of Wordle, a place where language becomes a delightful adventure for all ages! At WordleForAll, we invite everyone, from eager young minds to seasoned word aficionados, to indulge in our daily brain-teasing puzzles. Our game is designed not just to challenge but to educate and inspire, expanding vocabularies and igniting imaginations across generations. It's a celebration of words where learning meets fun, creating a vibrant community of enthusiasts united by their love for wordplay. With new puzzles available daily, accessible from anywhere, prepare to embark on a linguistic journey that sharpens your mind and connects you with fellow word wizards around the globe!
+        </p>
+      </div>
+
+      <form action="" method="post" class="form-login">
+        <input type="text" placeholder="Username" name="username" value="{{
+          request.form.username }}"><br>
+         <input type="password" placeholder="Password" name="password" value="{{
+          request.form.password }}"><br>
+        <input class="btn btn-default" type="submit" value="Login">
+      </form>
+
+      {% if error %}
+        <p class="error" style="text-align: center;"><strong>Error:</strong> {{ error }}
+      {% endif %}
+    </div>
+  </body>
+</html>

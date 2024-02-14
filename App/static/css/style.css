@@ -1,0 +1,54 @@
+body {
+    background-color: antiquewhite;
+}
+
+h1 {
+    /* border: 2px #eee solid; */
+    color: brown;
+    text-align: center;
+    padding: 10px;
+}
+
+.intro {
+    background-color: #f2f2f2; /* Light grey background */
+    padding: 20px;             /* Some padding around the content */
+    border-radius: 10px;       /* Rounded corners for the div */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a 3D effect */
+    max-width: 600px;          /* Max width of the div */
+    margin: 20px auto;         /* Center the div with automatic margins */
+    font-family: 'Arial', sans-serif; /* Use a common, readable font */
+}
+
+.intro p {
+    color: #333;               /* Dark grey color for the text */
+    font-size: 18px;           /* Slightly larger font size for readability */
+    line-height: 1.6;          /* Spacing between lines */
+    text-align: justify;       /* Justify the text for a clean look */
+}
+
+.form-login {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+        /* min-height: 100vh; Full viewport height */
+}
+
+.form-login input[type="text"],
+.form-login input[type="password"],
+.form-login input[type="submit"] { 
+    border-radius: 10px;
+    padding: 5px 5px;
+} 
+
+.form-login input[type='submit']:hover{
+    background-color: #45a049;
+}
+
+img {
+    width: 600px;
+    height: auto;
+    border: 2px ridge red;
+
+}
