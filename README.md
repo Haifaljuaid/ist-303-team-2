@@ -71,7 +71,7 @@ Estimated Completion Time: 5 days
 10.Allow players to earn points for correct guesses and progress through levels.
 
 **Settings and Preferences**
-11.Allow users to customize their game settings (e.g., difficulties, categories/topics)
+11.Allow users to customize their game settings (e.g., difficulties)
 
 **Security and Privacy**
 12.Make sure that users' personal information and gameplay data are secure.
