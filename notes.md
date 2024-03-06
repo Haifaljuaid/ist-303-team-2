@@ -13,3 +13,9 @@
 In project folder create __init__.py file. This file will have the function to create the app, which will initialize the database and register the blueprints. At the moment, this will not do much, but it will be needed for the rest of the app.
 
 Models created in Flask-SQLAlchemy are represented by classes that then translate to tables in a database. The attributes of those classes then turn into columns for those tables.
+
+How to Run the code:
+Make sure to have a virtual environment set up and install the packages mentioned above. 
+to run the flask follow the step below:
+a. ```export FLASK_APP=WodleApp```
+b. flask run
