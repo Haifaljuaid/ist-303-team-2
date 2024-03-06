@@ -1,0 +1,66 @@
+  
+#game-input {
+  /* background-color:aliceblue; */
+  gap: 10px;
+  margin: 10px;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  gap: 15px;
+  flex-direction: row !important;
+  justify-content: center;
+  margin: 10px;
+}
+
+/* CSS for Letter Boxes */
+.letter-box {
+  width: 40px;
+  font-size: 40px;
+  padding: 15px;
+  height: 40px;
+  background-color:white;
+  animation: flip 0.50s ease;
+  gap: 10px;
+}
+
+/* Flip animation */
+@keyframes flip {
+  from {
+    transform: rotateX(0deg);
+  }
+  to {
+    transform: rotateX(180deg);
+  }
+}
+
+/* keyboard section */
+.keyboard-row button{
+  height: 50px;
+  width: 50px;
+  margin: 2px;
+  cursor: pointer;
+}
+
+.keyboard-row{
+  display: flex;
+  justify-content: center;
+  margin: 5px 0;
+}
+
+#keyboard{
+  padding: 20px;
+  justify-content: center;
+}
+
+/* body and background images */
+.hero-body {
+  background-image: url('/project/static/images/signup.png');
+  background-size: cover; /* This will ensure that your image covers the whole page */
+  background-repeat: no-repeat; /* This will prevent the image from repeating */
+  background-attachment: fixed; /* This keeps the image fixed in position on scroll */
+}
+
+
+

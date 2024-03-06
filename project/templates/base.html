@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Flask Auth Example</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+
+    <!-- from the game_play -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+</head>
+
+<body>
+    <section class="hero is-warning is-fullheight" style="background-color: #e0e0e0;">
+        <!-- navigation bar -->
+        <div class="hero-head">
+            <nav class="navbar">
+                <div class="container">
+                    <!-- navigation bar -->
+                    <div class="navbar-brand">
+                        <a class="navbar-item">
+                        <img src="https://img.etimg.com/thumb/width-1200,height-900,imgsize-7116,resizemode-75,msid-102302303/news/international/us/wordle-773-august-1-clues-answer-unveiled-for-todays-word-puzzle.jpg" alt="logo">  
+                        </a>
+                    </div>
+
+                    <div id="navbarMenuHeroA" class="navbar-menu">
+                        <div class="navbar-end">
+                            <a href="{{ url_for('main.index') }}" class="navbar-item">
+                                Home
+                            </a>
+                            {% if current_user.is_authenticated %}
+                            <a href="{{ url_for('main.profile') }}" class="navbar-item">
+                                Profile
+                            </a>
+                            {% endif %}
+                            {% if current_user.is_authenticated %}
+                            <a href="{{ url_for('main.game_play') }}" class="navbar-item">
+                                Play Game
+                            </a>
+                            {% endif %}
+                            {% if not current_user.is_authenticated %}
+                            <a href="{{ url_for('auth.login') }}" class="navbar-item">
+                                Login
+                            </a>
+                            <a href="{{ url_for('auth.signup') }}" class="navbar-item">
+                                Sign Up
+                            </a>
+                            {% endif %}
+                            {% if current_user.is_authenticated %}
+                            <a href="{{ url_for('auth.logout') }}" class="navbar-item">
+                                Logout
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- this is the body -->
+        <div class="hero-body" style="background-color: rgb(247, 213, 213)0e0;">
+            <div class="container is-widescreen has-text-centered">
+               {% block content %}
+               {% endblock %}
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
