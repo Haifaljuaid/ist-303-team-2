@@ -1,0 +1,84 @@
+  
+#game-input {
+  /* background-color:aliceblue; */
+  gap: 10px;
+  margin: 10px;
+  justify-content: center !important;
+}
+
+.row {
+  display: flex;
+  gap: 15px;
+  flex-direction: row !important;
+  justify-content: center !important;
+  margin: 10px;
+}
+
+/* CSS for Letter Boxes */
+.letter-box {
+  width: 40px !important;
+  font-size: 40px !important;
+  padding: 15px !important;
+  height: 40px !important;
+  background-color:white;
+  animation: flip 0.50s ease;
+  gap: 10px !important;
+}
+
+/* Flip animation */
+@keyframes flip {
+  from {
+    transform: rotateX(0deg);
+  }
+  to {
+    transform: rotateX(180deg);
+  }
+}
+
+/* keyboard section */
+.keyboard-row button{
+  height: 50px;
+  width: 50px;
+  margin: 2px;
+  cursor: pointer;
+}
+
+.keyboard-row{
+  display: flex;
+  justify-content: center;
+  margin: 5px 0;
+}
+
+#keyboard{
+  padding: 20px;
+  justify-content: center;
+}
+
+/* body and background images */
+.hero-body {
+  background-image: url('/project/static/images/signup.png');
+  background-size: cover; /* This will ensure that your image covers the whole page */
+  background-repeat: no-repeat; /* This will prevent the image from repeating */
+  background-attachment: fixed; /* This keeps the image fixed in position on scroll */
+}
+
+
+
+/* intro application */
+
+.intro {
+  background-color: #e9ebb8; /* Light grey background */
+  padding: 20px;             /* Some padding around the content */
+  border-radius: 10px;       /* Rounded corners for the div */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a 3D effect */
+  max-width: 600px;          /* Max width of the div */
+  margin: 20px auto;         /* Center the div with automatic margins */
+  font-family: 'Arial', sans-serif; /* Use a common, readable font */
+}
+
+.intro p {
+  color: #333;               /* Dark grey color for the text */
+  font-size: 18px;           /* Slightly larger font size for readability */
+  line-height: 1.6;          /* Spacing between lines */
+  text-align: justify;       /* Justify the text for a clean look */
+}

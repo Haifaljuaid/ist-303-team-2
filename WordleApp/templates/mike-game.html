@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wordle Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+    input {
+      width: 30px;
+      text-align: center;
+      margin: 0 5px;
+    }
+    button {
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .Keyboard-module_keyboard__uYuqf {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px; /* Adjust the gap between rows as needed */
+      margin-top: 20px;
+    }
+    .Keyboard-module_row__ilOKU {
+      display: flex;
+    }
+    .Key-module_key__kchQI {
+      width: 30px;
+      height: 30px;
+      font-size: 14px;
+      cursor: pointer;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin: 0 5px; /* Adjust the horizontal margin as needed */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .Key-module_half__HooWu {
+      width: 100px;
+      height: 30px;
+    }
+    .Key-module_oneAndAHalf__bq8Tw {
+      width: 45px;
+      padding: 10px; /* Increase padding for larger size */
+    }
+  </style>
+</head>
+<body>
+  <h1>Wordle Game</h1>
+  <p>Guess the five-letter word:</p>
+  <div id="wordDisplay"></div>
+  <div id="feedback"></div>
+  <br>
+  <input type="text" maxlength="1" id="letter1" onclick="setSelectedInput(0)">
+  <input type="text" maxlength="1" id="letter2" onclick="setSelectedInput(1)">
+  <input type="text" maxlength="1" id="letter3" onclick="setSelectedInput(2)">
+  <input type="text" maxlength="1" id="letter4" onclick="setSelectedInput(3)">
+  <input type="text" maxlength="1" id="letter5" onclick="setSelectedInput(4)">
+  <br><br>
+  <div class="Keyboard-module_keyboard__uYuqf">
+    <div class="Keyboard-module_row__ilOKU">
+      <button type="button" data-key="q" aria-label="add q" aria-disabled="false" class="Key-module_key__kchQI" onclick="addLetter('q')">q</button>
+      <button type="button" data-key="w" aria-label="add w" aria-disabled="false" class="Key-module_key__kchQI" onclick="addLetter('w')">w</button>
+      <button type="button" data-key="e" aria-label="add e" aria-disabled="false" class="Key-module_key__kchQI" onclick="addLetter('e')">e</button>
+      <button type="button" data-key="r" aria-label="add r" aria-disabled="false" class="Key-module_key__kchQI" onclick="addLetter('r')">r</button>
+      <button type="button" data-key="t" aria-label="add t" aria-disabled="false" class="Key-module_key__kchQI" onclick="addLetter('t')">t</button>
+      <button type="button" data-key="y" aria-label="add y" aria-disabled="false" class="Key-module_key__kchQI" onclick="addLetter('y')">y</button>
+      <button type="button" data-key="u" aria-label="add u" aria-disabled="false" class="Key-module_key__kchQI" onclick="addLetter('u')">u</button>
+      <button type="button" data-key="i" aria-label="add i" aria-disabled="false" class="Key-module_key__kchQI" onclick="addLetter('i')">i</button>
+      <button type="button" data-key="o" aria-label="add o" aria-disabled="false" class="Key-module_key__kchQI" onclick="addLetter('o')">o</button>
+      <button type="button" data-key="p" aria-label="add p" aria-disabled="false" class="Key-module_key__kchQI" onclick="addLetter('p')">p</button>
+    </div>
+    <div class="Keyboard-module_row__ilOKU">
+      <div data-testid="spacer" class="Key-module_half__HooWu"></div>
+      <button type="button" data-key="a" aria-label="add a" aria-disabled="false" class="Key-module_key__kchQI" onclick="addLetter('a')">a</button>
+      <button type="button" data-key="s" aria-label="add s" aria-disabled="false" class="Key-module_key__kchQI" onclick="addLetter('s')">s</button>
+      <button type="button" data-key="d" aria-label="add d" aria-disabled="false" class="Key-module_key__kchQI" onclick="addLetter('d')">d</button>
+      <button type="button" data-key="f" aria-label="add f" aria-disabled="false" class="Key-module_key__kchQI" onclick="addLetter('f')">f</button>
+      <button type="button" data-key="g" aria-label="add g" aria-disabled="false" class="Key-module_key__kchQI" onclick="addLetter('g')">g</button>
+      <button type="button" data-key="h" aria-label="add h" aria-disabled="false" class="Key-module_key__kchQI" onclick="addLetter('h')">h</button>
+      <button type="button" data-key="j" aria-label="add j" aria-disabled="false" class="Key-module_key__kchQI" onclick="addLetter('j')">j</button>
+      <button type="button" data-key="k" aria-label="add k" aria-disabled="false" class="Key-module_key__kchQI" onclick="addLetter('k')">k</button>
+      <button type="button" data-key="l" aria-label="add l" aria-disabled="false" class="Key-module_key__kchQI" onclick="addLetter('l')">l</button>
+      <div data-testid="spacer" class="Key-module_half__HooWu"></div>
+    </div>
+    <div class="Keyboard-module_row__ilOKU">
+      <button type="button" data-key="↵" aria-label="enter" aria-disabled="true" class="Key-module_key__kchQI Key-module_oneAndAHalf__bq8Tw" onclick="checkGuess()">Enter</button>
+      <button type="button" data-key="z" aria-label="add z" aria-disabled="false" class="Key-module_key__kchQI" onclick="addLetter('z')">z</button>
+      <button type="button" data-key="x" aria-label="add x" aria-disabled="false" class="Key-module_key__kchQI" onclick="addLetter('x')">x</button>
+      <button type="button" data-key="c" aria-label="add c" aria-disabled="false" class="Key-module_key__kchQI" onclick="addLetter('c')">c</button>
+      <button type="button" data-key="v" aria-label="add v" aria-disabled="false" class="Key-module_key__kchQI" onclick="addLetter('v')">v</button>
+      <button type="button" data-key="b" aria-label="add b" aria-disabled="false" class="Key-module_key__kchQI" onclick="addLetter('b')">b</button>
+      <button type="button" data-key="n" aria-label="add n" aria-disabled="false" class="Key-module_key__kchQI" onclick="addLetter('n')">n</button>
+      <button type="button" data-key="m" aria-label="add m" aria-disabled="false" class="Key-module_key__kchQI" onclick="addLetter('m')">m</button>
+      <button type="button" data-key="delete" aria-label="backspace" aria-disabled="true" class="Key-module_key__kchQI" onclick="deleteLetter()">Del</button>
+    </div>
+  </div>
+
+  <script>
+    // Words to guess (you can add more words to this array)
+    const words = ["apple", "banana", "orange", "grape", "melon"];
+
+    // Select a random word from the array
+    const selectedWord = words[Math.floor(Math.random() * words.length)];
+
+    // Initialize the game state
+    let guessedWord = Array(selectedWord.length).fill('_');
+    let attempts = 0;
+
+    // Function to display the current state of the guessed word
+    function displayWord() {
+      document.getElementById("wordDisplay").innerHTML =
+guessedWord.join(' ');
+    }
+
+    // Function to check the user's guess
+    function checkGuess() {
+      const guess = [
+        document.getElementById("letter1").value.toLowerCase(),
+        document.getElementById("letter2").value.toLowerCase(),
+        document.getElementById("letter3").value.toLowerCase(),
+        document.getElementById("letter4").value.toLowerCase(),   
+        document.getElementById("letter5").value.toLowerCase()
+      ];
+     
+      // Validate the guess
+      if (guess.some(letter => !/[a-z]/.test(letter))) {
+        alert("Please enter valid letters.");
+        return;
+      }
+      
+      // Update the game state based on the guess
+      for (let i = 0; i < selectedWord.length; i++) {
+        if (selectedWord[i] === guess[i]) {
+          guessedWord[i] = guess[i];
+        } else if (selectedWord.includes(guess[i])) {
+          // Letter is correct but in the wrong position
+          guessedWord[selectedWord.indexOf(guess[i])] = guess[i];
+        }
+      }
+      
+      // Display the current state of the guessed word   
+      displayWord();
+      
+      // Check if the word is guessed
+      if (guessedWord.join('') === selectedWord) {
+        alert(`Congratulations! You guessed the word "${selectedWord}" in
+${attempts} attempts.`);
+        resetGame();
+      } else {
+        attempts++;
+        document.getElementById("feedback").innerHTML = `Attempts:
+${attempts}`;
+      }
+    }
+      
+    // Function to reset the game
+    function resetGame() {
+      // Select a new random word
+      selectedWord = words[Math.floor(Math.random() * words.length)];
+      
+      // Reset game state
+      guessedWord = Array(selectedWord.length).fill('_');
+      attempts = 0;
+        
+      // Clear input fields and feedback
+      document.getElementById("letter1").value = '';
+      document.getElementById("letter2").value = '';
+      document.getElementById("letter3").value = '';
+      document.getElementById("letter4").value = '';
+      document.getElementById("letter5").value = '';     
+      document.getElementById("feedback").innerHTML = '';
+      
+      // Display the initial state of the guessed word
+      displayWord();
+    }
+
+    // Display the initial state of the guessed word
+    displayWord();
+
+    // Variable to store the index of the currently selected input field
+    let selectedInputIndex = 0;
+
+    // Function to add the clicked letter to the input fields
+    function addLetter(letter) {
+      // Find the first empty input field and fill it with the clicked letter
+      const inputFields = [
+        document.getElementById("letter1"),
+        document.getElementById("letter2"),
+        document.getElementById("letter3"),
+        document.getElementById("letter4"),
+        document.getElementById("letter5")
+      ];
+
+      for (let i = 0; i < inputFields.length; i++) {
+        if (i === selectedInputIndex) {
+          inputFields[i].value = letter;
+          
+	  // Move focus to the next input field
+          selectedInputIndex = (selectedInputIndex + 1) % inputFields.length;
+          inputFields[selectedInputIndex].focus();
+
+          break;
+        }
+      }
+    }
+
+    // Function to delete the letter from the currently selected input field
+    function deleteLetter() {
+      // Find the currently selected input field and clear its value
+      const inputFields = [
+        document.getElementById("letter1"),
+        document.getElementById("letter2"),
+        document.getElementById("letter3"),
+        document.getElementById("letter4"),
+        document.getElementById("letter5")
+      ];
+
+      inputFields[selectedInputIndex].value = '';
+    }
+
+    // Function to set the currently selected input field index
+    function setSelectedInput(index) {
+      selectedInputIndex = index;
+    }
+  </script>
+</body>
+</html>
